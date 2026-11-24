@@ -9,7 +9,7 @@ var dashboard = {
 
             d.gebi('content').innerHTML = `
                 <div class="dash">
-                    <div class="dash-head"><h2>Dashboard</h2><small>${data.subtitle}</small></div>
+                    <div class="dash-head"><div><h2>Dashboard</h2><small>${data.subtitle}</small></div>${window.notif ? notif.bell() : ''}</div>
                     <div id="stat-cards" class="row card-container"></div>
                     <div class="row">
                         <div class="col-2-3"><div class="shadow"><h3>${data.mingguan.judul}</h3><div id="bar-chart"></div></div></div>

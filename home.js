@@ -47,7 +47,15 @@ var home = {
       : "<a class='lp-login' href='javascript:void(0)' onclick=\"navigate('auth/login/1')\">Masuk</a>";
   },
 
+  menu: function(force) {
+    var nav = document.getElementById('lp-nav'); if (!nav) return;
+    var open = typeof force === 'boolean' ? force : !nav.classList.contains('open');
+    nav.classList.toggle('open', open);
+    var b = nav.querySelector('.lp-burger'); if (b) b.setAttribute('aria-expanded', open);
+  },
+
   scroll: function(id) {
+    home.menu(false);
     var el = document.getElementById('lp-' + id);
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   },
@@ -66,9 +74,12 @@ var home = {
       d.gebi('content').innerHTML =
         "<div class='lp'>" +
 
-        "<nav class='lp-nav'><strong>" + data.brand + "</strong><div>" +
+        "<nav class='lp-nav' id='lp-nav'><strong>" + data.brand + "</strong>" +
+        "<div class='lp-menu' id='lp-menu'><div class='lp-links'>" +
         data.nav.map(function(n) { return "<a href='javascript:void(0)' onclick=\"home.scroll('" + n.target + "')\">" + n.text + "</a>"; }).join('') +
-        "</div>" + home.authLink() + "<button class='lp-btn lp-btn-solid' onclick=\"home.scroll('kontak')\">Konsultasi</button></nav>" +
+        "</div>" + home.authLink() + "<button class='lp-btn lp-btn-solid' onclick=\"home.scroll('kontak')\">Konsultasi</button></div>" +
+        (window.notif ? notif.bell() : '') +
+        "<button class='lp-burger' type='button' aria-label='Menu' aria-expanded='false' aria-controls='lp-menu' onclick='home.menu()'><span></span><span></span><span></span></button></nav>" +
 
         "<section class='lp-slider' aria-label='Sorotan program'>" +
         home.renderSlides(data.slides) +
@@ -113,3 +124,5 @@ var home = {
     }
   }
 };
+
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && window.home) home.menu(false); });
