@@ -1,36 +1,36 @@
 :root {
-
+  
   --pColor: #427aa1;
---pLightColor: #ebf2fa;
---pDarkColor: #064789 ;
-
---pTextColor: #000000;
---pButtonColor: #fff;
---pPage: #f2f2f2;
---gInput: #fff;
+  --pLightColor: #ebf2fa;
+  --pDarkColor: #064789 ;
+  
+  --pTextColor: #000000;
+  --pButtonColor: #fff;
+  --pPage: #f2f2f2;
+  --gInput: #fff;
 }
 
 .main {margin-left: 200px; padding: 10px;}
 
 .menu {
   color: white;
-margin: 0;
-height: 100%;
-padding: 0;
-width: 200px;
-position: fixed;
-overflow: hidden;
-z-index: 10;
-box-shadow: 0 0 5px var(--pLightColor);
-background-size: 40px, cover;
-background-color:var(--pColor);
-background-image: linear-gradient(var(--pColor), var(--pColor), var(--pDarkColor));
-background-repeat: repeat, no-repeat;
-background-position: center, center;
-
-display: flex;
-flex-direction: column;
-
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  overflow: hidden;
+  z-index: 10;
+  box-shadow: 0 0 5px var(--pLightColor);
+  background-size: 40px, cover;
+  background-color:var(--pColor);
+  background-image: linear-gradient(var(--pColor), var(--pColor), var(--pDarkColor));
+  background-repeat: repeat, no-repeat;
+  background-position: center, center;
+  
+  display: flex;
+  flex-direction: column;
+  
 }
 .menu .sidebar-header p { padding: 5px 10px; text-align: center; /* Koreksi dari 'align:center' */}
 .menu .sidebar-footer { padding: 20px 10px; margin-top: auto;  opacity: 0.7;}
@@ -68,58 +68,58 @@ flex-direction: column;
 .footer{ text-align: center; margin-top: 50px;}
 
 @media screen and (max-width: 700px) {
-.main {margin-left: 0px; padding: 60px 10px;}
-.menu { display: flex; justify-content: flex-end;  align-items: center; width: 100%;  height: auto; position: fixed; }
-.menu .logo { width: auto; display: flex; align-items: center;}
-.menu ul { display: flex; margin-left: auto; list-style: none;}
-.menu li { display: flex; justify-content: center; align-items: center; padding: 10px 15px; cursor: pointer; transition: all 0.3s ease;}
-.menu .sidebar-footer { display: none; }
-.menu .sidebar-header p { display: none; }
-
-.menu { flex-direction: row; align-items: center; justify-content: space-between; }
+  .main {margin-left: 0px; padding: 60px 10px;}
+  .menu { display: flex; justify-content: flex-end;  align-items: center; width: 100%;  height: auto; position: fixed; }
+  .menu .logo { width: auto; display: flex; align-items: center;}
+  .menu ul { display: flex; margin-left: auto; list-style: none;}
+  .menu li { display: flex; justify-content: center; align-items: center; padding: 10px 15px; cursor: pointer; transition: all 0.3s ease;}
+  .menu .sidebar-footer { display: none; }
+  .menu .sidebar-header p { display: none; }
+  
+  .menu { flex-direction: row; align-items: center; justify-content: space-between; }
 }
 
 @media screen and (max-width: 450px) {
-.main { padding-top: 10px; padding-bottom: 90px; }
-.footer { margin-bottom: 30px; }
-
-/* ===== bottom menu ===== */
-.menu { z-index: 100; overflow: visible; bottom: 0; top: auto; position: fixed; width: 100%; height: auto;
-  background: var(--pColor); box-shadow: 0 -2px 10px rgba(0,0,0,.18); padding-bottom: env(safe-area-inset-bottom, 0px); }
-.menu .logo, .menu .sidebar-header { display: none; }
-.menu::before { inset: 0; transform: none; }               /* pola tidak bocor keluar bar */
-.menu ul { display: flex; align-items: stretch; width: 100%; margin: 0; padding: 0; list-style: none; }
-
-.menu ul li { position: relative; flex: 1 1 0; min-width: 0; height: 62px; padding: 6px 2px 4px; gap: 3px;
-  flex-direction: column; justify-content: center; align-items: center; text-align: center;
-  font-size: 11px; line-height: 1.1; white-space: nowrap; background: transparent; color: #fff; }
-.menu ul li svg { width: 24px; height: 24px; margin: 0; flex-shrink: 0; }
-.menu ul li:hover:not(.active), .menu ul li.active { background: transparent; color: #fff; }
-.menu ul li.active { font-weight: 700; box-shadow: inset 0 3px 0 #fff; }
-.menu ul li:not(.active) { opacity: .8; }
-
-/* menu tengah: lingkaran, setengah bagian atas menonjol di atas bar */
-.menu ul li.item { justify-content: flex-end; padding-bottom: 7px; box-shadow: none; opacity: 1; overflow: visible; }
-.menu ul li.item svg { position: absolute; top: -28px; left: 50%; transform: translateX(-50%);
-  box-sizing: border-box; width: 56px; height: 56px; max-width: none; padding: 13px; margin: 0;
-  border-radius: 50%; border: 5px solid var(--pPage); background: var(--pDarkColor);
-  box-shadow: 0 -3px 8px rgba(0,0,0,.18); transition: transform .2s ease; }
-.menu ul li.item.active svg { background: var(--pDarkColor); box-shadow: 0 -3px 10px rgba(0,0,0,.3), 0 0 0 2px #fff inset; }
-.menu ul li.item:active svg { transform: translateX(-50%) scale(.94); }
+  .main { padding-top: 10px; padding-bottom: 90px; }
+  .footer { margin-bottom: 30px; }
+  
+  /* ===== bottom menu ===== */
+  .menu { z-index: 100; overflow: visible; bottom: 0; top: auto; position: fixed; width: 100%; height: auto;
+    background: var(--pColor); box-shadow: 0 -2px 10px rgba(0,0,0,.18); padding-bottom: env(safe-area-inset-bottom, 0px); }
+    .menu .logo, .menu .sidebar-header { display: none; }
+    .menu::before { inset: 0; transform: none; }               /* pola tidak bocor keluar bar */
+    .menu ul { display: flex; align-items: stretch; width: 100%; margin: 0; padding: 0; list-style: none; }
+    
+    .menu ul li { position: relative; flex: 1 1 0; min-width: 0; height: 62px; padding: 6px 2px 4px; gap: 3px;
+      flex-direction: column; justify-content: center; align-items: center; text-align: center;
+      font-size: 11px; line-height: 1.1; white-space: nowrap; background: transparent; color: #fff; }
+      .menu ul li svg { width: 24px; height: 24px; margin: 0; flex-shrink: 0; }
+      .menu ul li:hover:not(.active), .menu ul li.active { background: transparent; color: #fff; }
+      .menu ul li.active { font-weight: 700; box-shadow: inset 0 3px 0 #fff; }
+      .menu ul li:not(.active) { opacity: .8; }
+      
+      /* menu tengah: lingkaran, setengah bagian atas menonjol di atas bar */
+      .menu ul li.item { justify-content: flex-end; padding-bottom: 7px; box-shadow: none; opacity: 1; overflow: visible; }
+      .menu ul li.item svg { position: absolute; top: -28px; left: 50%; transform: translateX(-50%);
+        box-sizing: border-box; width: 56px; height: 56px; max-width: none; padding: 13px; margin: 0;
+        border-radius: 50%; border: 5px solid var(--pPage); background: var(--pDarkColor);
+        box-shadow: 0 -3px 8px rgba(0,0,0,.18); transition: transform .2s ease; }
+        .menu ul li.item.active svg { background: var(--pDarkColor); box-shadow: 0 -3px 10px rgba(0,0,0,.3), 0 0 0 2px #fff inset; }
+        .menu ul li.item:active svg { transform: translateX(-50%) scale(.94); }
 }
 
 /* ===== mobile: kartu 2 kolom (dashboard & kasir), chip kategori fit isi ===== */
 @media screen and (max-width: 450px) {
-#pos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
-#pos-grid > [class*='col-'] { width: auto; min-width: 0; }
-#pos-grid .card, .dash #stat-cards .card { margin: 4px; padding: 8px; font-size: 14px; }
-#pos-grid .card strong, .dash #stat-cards .card strong { font-size: 14px; line-height: 1.25; }
-#pos-grid .artikel, .dash #stat-cards .artikel { margin: 2px 4px 4px; gap: 2px; }
-.dash #stat-cards .artikel { font-size: 1.35em; }
-.dash #stat-cards .artikel small { font-size: 11px; }
-#pos-grid .artikel small { font-size: 11px; }
-#pos-chips .button, #pos-chips button { width: auto; margin: 0; padding: 6px 12px; font-size: 14px; }
-#pos-chips { gap: 6px; }
+  #pos-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; }
+  #pos-grid > [class*='col-'] { width: auto; min-width: 0; }
+  #pos-grid .card, .dash #stat-cards .card { margin: 4px; padding: 8px; font-size: 14px; }
+  #pos-grid .card strong, .dash #stat-cards .card strong { font-size: 14px; line-height: 1.25; }
+  #pos-grid .artikel, .dash #stat-cards .artikel { margin: 2px 4px 4px; gap: 2px; }
+  .dash #stat-cards .artikel { font-size: 1.35em; }
+  .dash #stat-cards .artikel small { font-size: 11px; }
+  #pos-grid .artikel small { font-size: 11px; }
+  #pos-chips .button, #pos-chips button { width: auto; margin: 0; padding: 6px 12px; font-size: 14px; }
+  #pos-chips { gap: 6px; }
 }
 
 /* ===== kasir (pos) ===== */
@@ -148,7 +148,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 /* ===== dashboard ===== */
 .dash-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 5px 5px 10px; }
 .dash-head h2 { margin: 0; }
-.dash-head small { color: #777; }
+.dash-head small { color: #666; }
 .dash h3 { margin: 0 0 12px; font-size: 1.05em; }
 .dash [class*='col-'] > .shadow { flex: 1; margin: 5px; padding: 14px 16px; }
 
@@ -251,7 +251,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .lp-quote blockquote { margin: 0; color: #333; }
 .lp-quote figcaption { display: flex; align-items: center; gap: 12px; margin-top: 8px; }
 .lp-quote figcaption img { width: 44px; height: 44px; border-radius: 50%; }
-.lp-quote small { display: block; color: #777; }
+.lp-quote small { display: block; color: #666; }
 
 .lp-faq { max-width: 760px; margin: 0 auto; }
 .lp-faq-item { border-bottom: 1px solid #ddd; }
@@ -338,7 +338,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .pf-side h1 { margin: 14px 0 6px; font-size: 1.5em; line-height: 1.2; }
 .pf-avatar .img { width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 5px solid var(--pColor); box-shadow: 0 0 0 4px var(--pLightColor); cursor: pointer; }
 .pf-badge { display: inline-block; padding: 1px 16px; border-radius: 999px; background: var(--pDarkColor); color: #fff; font-size: .9em; }
-.pf-handle { margin: 6px 0 0; color: #777; }
+.pf-handle { margin: 6px 0 0; color: #666; }
 .pf-info { margin: 16px 0 0; text-align: left; }
 .pf-info li { display: flex; align-items: center; gap: 12px; padding: 9px 4px; border-bottom: 1px solid #e6e6e6; overflow-wrap: anywhere; }
 .pf-info svg { width: 26px; height: 26px; flex-shrink: 0; }
@@ -347,7 +347,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 .pf-bio { margin: 14px 0 0; color: #555; font-size: .95em; }
 .pf-progress { display: flex; justify-content: space-between; margin-top: 16px; font-size: .9em; color: #555; }
 .pf-side .progress-bar { height: 8px; margin: 4px 0 2px; }
-.pf-missing { display: block; color: #777; text-align: left; margin-bottom: 4px; }
+.pf-missing { display: block; color: #666; text-align: left; margin-bottom: 4px; }
 .pf-btns { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
 .pf-btns button { width: 100%; justify-content: center; padding: 9px; background: #fff; }
 .pf-btns button:hover { background: var(--pLightColor); }
@@ -381,7 +381,7 @@ body.auth-mode .main { margin-left: 0; margin-right: 0; padding: 0; }
 .au-field label { display: block; font-size: .92em; font-weight: 600; margin-bottom: 2px; }
 .au-field .input { margin-top: 2px; }
 .au-field .input:focus { border-color: var(--pColor); box-shadow: 0 0 0 3px var(--pLightColor); }
-.au-hint { display: block; margin: -6px 0 10px; color: #777; }
+.au-hint { display: block; margin: -6px 0 10px; color: #666; }
 .au-check { display: flex; align-items: center; gap: 8px; font-size: .9em; margin: 0 0 12px; cursor: pointer; }
 .au-cap { display: flex; gap: 8px; }
 .au-cap .input { flex: 1; }
@@ -427,5 +427,5 @@ body.auth-mode .main { margin-left: 0; margin-right: 0; padding: 0; }
 .nf-item:not(.unread) > i { opacity: .35; }
 .nf-item b { display: block; }
 .nf-item p { margin: 2px 0 4px; color: #444; font-size: .95em; }
-.nf-item small { color: #777; }
-.nf-empty { text-align: center; color: #777; padding: 24px 0; }
+.nf-item small { color: #666; }
+.nf-empty { text-align: center; color: #666; padding: 24px 0; }
